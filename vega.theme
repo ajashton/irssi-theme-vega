@@ -1,0 +1,72 @@
+# For best results:
+# - /set indent 20
+
+# default foreground color (%N) - -1 is the "default terminal color"
+default_color = "-1";
+
+# print timestamp/servertag at the end of line, not at beginning
+info_eol = "false";
+
+indent = "20";
+
+abstracts = {
+
+  # custom
+  vrule = "%K▕%N";
+
+  # basics
+  line_start = "";
+  timestamp = "%b$*%n";
+
+  prompt = "%k%2 $* %N%g⮀%N ";
+  # requires a PowerLine-enabled font
+
+  comment = "%K($*)%n";
+
+  # status bar
+  sb_default_bg = "%0";
+  sb_background = "%0";
+  sbstart = "%K";
+  sb = "%K$*";
+  sb_act_sep = "%K$*";
+  sb_act_text = "%p$*";
+  sb_act_msg = "%P$*";
+  sb_act_hilight = "%Y$*";
+};
+
+
+formats = {
+  "fe-common/core" = {
+    join = "           %b★{vrule} %b$0 joined";
+    part = "           %b×{vrule} %b$0 left";
+    quit = "           %b×{vrule} %b$0 quit";
+    kick = "           %b×{vrule} %b$0 was kicked by $2 {comment $3}";
+    own_msg = "%g$[-12]0{vrule} $1";
+    own_msg_channel = "%Wown_msg_channel: $0 $1 $2 $3";
+    pubmsg_me = "%Y$[-12]0{vrule}%Y $1";
+    pubmsg_me_channel = "%Wpubmsg_me_channel: $0 $1 $2 $3";
+    pubmsg_hilight = "%Y$[-12]1{vrule}%Y $2";
+    pubmsg_hilight_channel = "%Wpubmsg_highlight_channel: $0 $1 $2 $3 $4";
+    pubmsg = "%G$[-12]0{vrule}%g $1";
+    pubmsg_channel = "%Wpubmsg_channel: $0 $1 $2 $3";
+    set_item = "$0 %P=%N $1";
+    line_start_irssi = "           %b•{vrule}%b ";
+    nick_changed = "           %b•{vrule}%b $0 is now known as $1";
+    your_nick_changed = "           %p•{vrule}%b You're now known as %g$1";
+    daychange = "           %b•{vrule}%b Day changed to %%d %%b %%Y";
+  };
+  "fe-common/irc" = {
+    chanmode_change = "%K$[-10]2 %b•{vrule}%b modechange: $1";
+    server_chanmode_change = "%Wserver_chanmode_change: $0 $1 $2";
+    own_action = "%g$[-12]0{vrule} $1";
+    # /me foo
+    action_public = "           %b★{vrule} %g$_$0$_ $1";
+    action_public_channel = "%Waction_public: $0 $1 $2";
+    channel_created = "%K$[-12]0{vrule}%N %Kcreated $1";
+    topic = "%b       Topic{vrule} $1";
+    no_topic = "%b       Topic{vrule} (none)";
+    topic_info = "%K$[-12]0{vrule}%K set topic $1";
+    channel_synced = "%K$0 synced in $1 secs";
+  };
+};
+
