@@ -53,7 +53,7 @@ formats = {
     line_start_irssi = "           %b•{vrule}%b ";
     nick_changed = "           %b•{vrule}%b $0 is now known as $1";
     your_nick_changed = "           %p•{vrule}%b You're now known as %g$1";
-    daychange = "           %b•{vrule}%b Day changed to %%d %%b %%Y";
+    daychange = "%%d %%b %%Y      %b•{vrule}%b day changed ";
   };
   "fe-common/irc" = {
     chanmode_change = "%K$[-10]2 %b•{vrule}%b modechange: $1";
